@@ -1,0 +1,45 @@
+body {
+    font-family: monospace;
+
+***REMOVED***
+
+.card {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+***REMOVED***
+
+.title {
+    font-size: 30px;
+***REMOVED***
+
+
+#movie-input {
+    font-family: monospace;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+***REMOVED***
+
+#search-button {
+    font-family: monospace;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5px;
+***REMOVED***
+
+.list {
+    list-style-type: none;
+***REMOVED***
+
+li {
+    list-style-type: none;
+    display: none;
+***REMOVED***
+
+li.display {
+    display: block;
+***REMOVED***
