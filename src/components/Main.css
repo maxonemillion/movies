@@ -9,10 +9,14 @@ body {
 ***REMOVED***
 
 .card {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    margin-right: 100px;
     margin-bottom: 50px;
+***REMOVED***
+
+.card1 {
+  position: relative;  
+  margin-left: 200px
 ***REMOVED***
 
 
@@ -28,8 +32,6 @@ img.display {
 
 .title {
     font-size: 30px;
-    margin-left: -75px
-
 ***REMOVED***
 
 
@@ -51,7 +53,6 @@ img.display {
 
 .list {
     list-style-type: none;
-    margin-left: -75px
 ***REMOVED***
 
 li {
@@ -61,12 +62,6 @@ li {
 
 li.display {
     display: block;
-***REMOVED***
-
-
-  .card1 {
-    position: relative;  
-    margin-left: 150px
 ***REMOVED***
   
   .card1:before, .card1:after {
@@ -83,8 +78,6 @@ li.display {
     animation: steam 20s linear infinite;
 ***REMOVED***
 
-  
-  
   @keyframes steam {
     0% {
       background-position: 0 0;
