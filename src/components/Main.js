@@ -23,6 +23,7 @@ const Main = () => {
       .then(res => {
         console.log(res.data)
         setMovies(res.data);
+        loadPlatforms(movies.imdbID)
     ***REMOVED***)
       .catch(err => console.log(err));
 ***REMOVED***
@@ -39,7 +40,7 @@ const Main = () => {
   const handleSubmit = e => {
     e.preventDefault();
     loadTitles(searchTitle)
-    loadPlatforms(movies.imdbID)
+    // loadPlatforms(movies.imdbID)
     setDisplay(!display)
 ***REMOVED***;
 
