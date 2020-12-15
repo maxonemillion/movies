@@ -1,6 +1,6 @@
 ***REMOVED***
 const BASEURL = "http://www.omdbapi.com/?t=";
-const APIKEY = "***REMOVED***";
+const APIKEY = "";
 
 ***REMOVED***
   search: function (query) {
