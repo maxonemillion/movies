@@ -50,8 +50,9 @@ const Main = () => {
   ***REMOVED***;
 
   const handleKeypress = e => {
+    console.log(e.keyCode)
     if (e.keyCode === 13) {
-      handleSubmit();
+      handleSubmit(e);
     ***REMOVED***
   ***REMOVED***;
 
@@ -122,8 +123,8 @@ const Main = () => {
                     <br></br>
                     <br></br>
                     Watch: {platforms.collection?.id***REMOVED***
-
-                    {/* {Object.keys(platforms.collection.locations[]).map(key => {
+                    {/* {platforms.collection ? platforms.collection.locations : ""***REMOVED*** */***REMOVED***
+                    {/* {Object.keys(platforms.collection.locations).map(key => {
           if (!Array.isArray(platforms[key])) {
             return <li>{key***REMOVED***: {platforms[key]***REMOVED***</li>;
 ***REMOVED***
