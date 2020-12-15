@@ -12,30 +12,35 @@ const Main = () => {
   const [display, setDisplay] = useState(false);
   const [platforms, setPlatforms] = useState({***REMOVED***);
 
-  useEffect(() => {
-    if (movies.imdbID) {
-      loadPlatforms(movies.imdbID)
-    ***REMOVED***
-  ***REMOVED***, [movies]);
+  // useEffect(() => {
+  //   if (movies.imdbID) {
+  //     loadPlatforms(movies.imdbID)
+  //   ***REMOVED***
+  // ***REMOVED***, [movies]);
 
   function loadTitles(query) {
     API.search(query)
       .then(res => {
-        console.log(res.data)
-        setMovies(res.data);
-        loadPlatforms(movies.imdbID)
+        console.log("24", res.data)
+        API2.platforms(res.data.imdbID)
+        .then(res2 => {
+          console.log("28", res2.data)
+          setMovies(res.data);
+          setPlatforms(res2.data);
+***REMOVED***)
+          .catch(err => console.log(err));
 ***REMOVED***)
       .catch(err => console.log(err));
   ***REMOVED***
 
-  function loadPlatforms(id) {
-    API2.platforms(id)
-      .then(res => {
-        console.log(res.data)
-        setPlatforms(res.data);
-***REMOVED***)
-      .catch(err => console.log(err));
-  ***REMOVED***
+  // function loadPlatforms(id) {
+  //   API2.platforms(id)
+  //     .then(res => {
+  //       console.log(res.data)
+  //       setPlatforms(res.data);
+  //     ***REMOVED***)
+  //     .catch(err => console.log(err));
+  // ***REMOVED***
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -49,6 +54,9 @@ const Main = () => {
       handleSubmit();
     ***REMOVED***
   ***REMOVED***;
+
+  console.log("platform", platforms)
+  console.log("movies", movies)
 
   return (
     <div>
@@ -112,7 +120,7 @@ const Main = () => {
             IMDb: {movies.imdbRating***REMOVED***
                     <br></br>
                     <br></br>
-                    {/* Watch: {platforms.collection.id***REMOVED*** */***REMOVED***
+                    Watch: {platforms.collection?.id***REMOVED***
 
                     {/* {Object.keys(platforms.collection.locations[]).map(key => {
           if (!Array.isArray(platforms[key])) {
