@@ -7,7 +7,7 @@
 ***REMOVED***
           params: {source_id: id, source: 'imdb', country: 'us'***REMOVED***,
 ***REMOVED***
-***REMOVED***
+            'x-rapidapi-key': '***REMOVED***',
 ***REMOVED***
         ***REMOVED***
       ***REMOVED***;

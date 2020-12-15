@@ -1,9 +1,9 @@
-import React, { useEffect, useState ***REMOVED*** from "react";
 import { Form, Button, Card, Container, Row, Col ***REMOVED*** from "react-bootstrap";
-import API from "../utils/API";
-import "./Main.css"
+import React, { useEffect, useState ***REMOVED*** from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import API2 from "../utils/API2";
+import API from "../utils/API";
+import "./Main.css"
 
 
 const Main = () => {
@@ -45,7 +45,7 @@ const Main = () => {
 ***REMOVED***;
 
   const handleKeypress = e => {
-    if (e.code === 13) {
+    if (e.keyCode === 13) {
       handleSubmit();
   ***REMOVED***
 ***REMOVED***;
@@ -54,18 +54,19 @@ const Main = () => {
     <div>
       <Form.Group className="form">
         <Form.Control
+          autoComplete="off"
           type="text"
           id="movie-input"
           placeholder="Find a movie"
           onChange={(event) => setSearchTitle(event.target.value)***REMOVED***
-          onKeyPress={handleKeypress***REMOVED***
+          onKeyDown={handleKeypress***REMOVED***
           value={searchTitle***REMOVED*** />
         <div className="wrapper">
           <Button className="btn"
             id="search-button"
             variant="light"
             type="submit"
-            // onClick={() => loadTitles(searchTitle)***REMOVED***
+            // onKeyDown={(e) => handleKeypress(e) ***REMOVED***
             onClick={handleSubmit***REMOVED***
           >Search
             </Button>
