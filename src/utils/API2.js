@@ -2,7 +2,6 @@ import axios from "axios";
 
 export default {
     platforms: function (id) {
-      console.log("PLATFORMS API", id)
         const options = {
           method: 'GET',
           url: 'https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlookup',

@@ -12,19 +12,13 @@ const Main = () => {
   const [display, setDisplay] = useState(false);
   const [platforms, setPlatforms] = useState({});
 
-  // useEffect(() => {
-  //   if (movies.imdbID) {
-  //     loadPlatforms(movies.imdbID)
-  //   }
-  // }, [movies]);
-
   function loadTitles(query) {
     API.search(query)
       .then(res => {
-        console.log("24", res.data)
+        console.log(res.data)
         API2.platforms(res.data.imdbID)
         .then(res2 => {
-          console.log("28", res2.data)
+          console.log(res2.data)
           setMovies(res.data);
           setPlatforms(res2.data);
           })
@@ -32,15 +26,6 @@ const Main = () => {
       })
       .catch(err => console.log(err));
   }
-
-  // function loadPlatforms(id) {
-  //   API2.platforms(id)
-  //     .then(res => {
-  //       console.log(res.data)
-  //       setPlatforms(res.data);
-  //     })
-  //     .catch(err => console.log(err));
-  // }
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -50,14 +35,11 @@ const Main = () => {
   };
 
   const handleKeypress = e => {
-    console.log(e.keyCode)
     if (e.keyCode === 13) {
       handleSubmit(e);
     }
   };
 
-  console.log("platform", platforms)
-  console.log("movies", movies)
 
   return (
     <div>
@@ -75,7 +57,6 @@ const Main = () => {
             id="search-button"
             variant="light"
             type="submit"
-            // onKeyDown={(e) => handleKeypress(e) }
             onClick={handleSubmit}
           >Search
             </Button>
@@ -103,7 +84,7 @@ const Main = () => {
           </Col>
           <Col>
             <Card style={{ width: '18rem', border: "none" }} className="card">
-              <Card.Body>
+              <Card.Body className="main-card">
                 <br></br>
                 <Card.Title className="title">{movies.Title}</Card.Title>
                 <Card.Text className="list">
@@ -122,21 +103,16 @@ const Main = () => {
             IMDb: {movies.imdbRating}
                     <br></br>
                     <br></br>
-                    Watch: {platforms.collection?.id}
-                    {/* {platforms.collection ? platforms.collection.locations : ""} */}
-                    {/* {Object.keys(platforms.collection.locations).map(key => {
-          if (!Array.isArray(platforms[key])) {
-            return <li>{key}: {platforms[key]}</li>;
-          }
-        })} */}
+                    
+            {platforms.collection?.locations.map((streams) => {
+              return (
+                <ul>
+                  <a href={streams.url} rel="noreferrer" target="_blank">{streams.display_name}</a>
+                </ul>
+              )
+            })}
+                    
                   </li>
-
-                  <ul>
-                    {/* {platforms.collection.locations} */}
-                    {/* {platforms.collection.locations.map(stream => {
-                      return <li>{stream.display_name}</li>
-                    })} */}
-                  </ul>
                   <br></br>
                 </Card.Text>
               </Card.Body>
