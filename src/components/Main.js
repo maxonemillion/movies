@@ -1,9 +1,9 @@
-import React, { useEffect, useState ***REMOVED*** from "react";
 import { Form, Button, Card, Container, Row, Col ***REMOVED*** from "react-bootstrap";
-import API from "../utils/API";
-import "./Main.css"
+import React, { useEffect, useState ***REMOVED*** from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import API2 from "../utils/API2";
+import API from "../utils/API";
+import "./Main.css"
 
 
 const Main = () => {
@@ -15,7 +15,7 @@ const Main = () => {
   // useEffect(() => {
   //   if (movies.imdbID) {
   //     loadPlatforms(movies.imdbID)
-  // ***REMOVED***
+  //   ***REMOVED***
   // ***REMOVED***, [movies]);
 
   function loadTitles(query) {
@@ -27,18 +27,18 @@ const Main = () => {
           console.log("28", res2.data)
           setMovies(res.data);
           setPlatforms(res2.data);
-        ***REMOVED***)
+***REMOVED***)
           .catch(err => console.log(err));
-    ***REMOVED***)
+***REMOVED***)
       .catch(err => console.log(err));
-***REMOVED***
+  ***REMOVED***
 
   // function loadPlatforms(id) {
   //   API2.platforms(id)
   //     .then(res => {
   //       console.log(res.data)
   //       setPlatforms(res.data);
-  //   ***REMOVED***)
+  //     ***REMOVED***)
   //     .catch(err => console.log(err));
   // ***REMOVED***
 
@@ -47,13 +47,13 @@ const Main = () => {
     loadTitles(searchTitle)
     // loadPlatforms(movies.imdbID)
     setDisplay(!display)
-***REMOVED***;
+  ***REMOVED***;
 
   const handleKeypress = e => {
-    if (e.code === 13) {
+    if (e.keyCode === 13) {
       handleSubmit();
-  ***REMOVED***
-***REMOVED***;
+    ***REMOVED***
+  ***REMOVED***;
 
   console.log("platform", platforms)
   console.log("movies", movies)
@@ -62,18 +62,19 @@ const Main = () => {
     <div>
       <Form.Group className="form">
         <Form.Control
+          autoComplete="off"
           type="text"
           id="movie-input"
           placeholder="Find a movie"
           onChange={(event) => setSearchTitle(event.target.value)***REMOVED***
-          onKeyPress={handleKeypress***REMOVED***
+          onKeyDown={handleKeypress***REMOVED***
           value={searchTitle***REMOVED*** />
         <div className="wrapper">
           <Button className="btn"
             id="search-button"
             variant="light"
             type="submit"
-            // onClick={() => loadTitles(searchTitle)***REMOVED***
+            // onKeyDown={(e) => handleKeypress(e) ***REMOVED***
             onClick={handleSubmit***REMOVED***
           >Search
             </Button>
@@ -87,8 +88,8 @@ const Main = () => {
       {/* {Object.keys(movies).map(key => {
           if (!Array.isArray(movies[key])) {
             return <li>{key***REMOVED***: {movies[key]***REMOVED***</li>;
-        ***REMOVED***
-      ***REMOVED***)***REMOVED***
+***REMOVED***
+  ***REMOVED***)***REMOVED***
       </li> */***REMOVED***
 
 
@@ -125,15 +126,15 @@ const Main = () => {
                     {/* {Object.keys(platforms.collection.locations[]).map(key => {
           if (!Array.isArray(platforms[key])) {
             return <li>{key***REMOVED***: {platforms[key]***REMOVED***</li>;
-        ***REMOVED***
-      ***REMOVED***)***REMOVED*** */***REMOVED***
+***REMOVED***
+  ***REMOVED***)***REMOVED*** */***REMOVED***
                   </li>
 
                   <ul>
                     {/* {platforms.collection.locations***REMOVED*** */***REMOVED***
                     {/* {platforms.collection.locations.map(stream => {
                       return <li>{stream.display_name***REMOVED***</li>
-                  ***REMOVED***)***REMOVED*** */***REMOVED***
+          ***REMOVED***)***REMOVED*** */***REMOVED***
                   </ul>
                   <br></br>
                 </Card.Text>
