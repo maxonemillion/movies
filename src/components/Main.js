@@ -1,5 +1,5 @@
 import { Form, Button, Card, Container, Row, Col } from "react-bootstrap";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import API2 from "../utils/API2";
 import API from "../utils/API";
