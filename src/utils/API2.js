@@ -1,19 +1,19 @@
-***REMOVED***
+import axios from "axios";
 
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
+export default {
+    platforms: function (id) {
+      console.log("PLATFORMS API", id)
+        const options = {
+          method: 'GET',
+          url: 'https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlookup',
+          params: {source_id: id, source: 'imdb', country: 'us'},
+          headers: {
             'x-rapidapi-key': '***REMOVED***',
-***REMOVED***
-***REMOVED***
-***REMOVED***
+            'x-rapidapi-host': 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com'
+          }
+        };
         
-***REMOVED***
+        return axios.request(options)
         
-***REMOVED***
-***REMOVED***
+      }
+}

@@ -1,5 +1,5 @@
-import { Form, Button, Card, Container, Row, Col ***REMOVED*** from "react-bootstrap";
-import React, { useEffect, useState ***REMOVED*** from "react";
+import { Form, Button, Card, Container, Row, Col } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import API2 from "../utils/API2";
 import API from "../utils/API";
@@ -7,16 +7,16 @@ import "./Main.css"
 
 
 const Main = () => {
-  const [movies, setMovies] = useState({***REMOVED***);
+  const [movies, setMovies] = useState({});
   const [searchTitle, setSearchTitle] = useState("");
   const [display, setDisplay] = useState(false);
-  const [platforms, setPlatforms] = useState({***REMOVED***);
+  const [platforms, setPlatforms] = useState({});
 
   // useEffect(() => {
   //   if (movies.imdbID) {
   //     loadPlatforms(movies.imdbID)
-  //   ***REMOVED***
-  // ***REMOVED***, [movies]);
+  //   }
+  // }, [movies]);
 
   function loadTitles(query) {
     API.search(query)
@@ -27,34 +27,34 @@ const Main = () => {
           console.log("28", res2.data)
           setMovies(res.data);
           setPlatforms(res2.data);
-***REMOVED***)
+          })
           .catch(err => console.log(err));
-***REMOVED***)
+      })
       .catch(err => console.log(err));
-  ***REMOVED***
+  }
 
   // function loadPlatforms(id) {
   //   API2.platforms(id)
   //     .then(res => {
   //       console.log(res.data)
   //       setPlatforms(res.data);
-  //     ***REMOVED***)
+  //     })
   //     .catch(err => console.log(err));
-  // ***REMOVED***
+  // }
 
   const handleSubmit = e => {
     e.preventDefault();
     loadTitles(searchTitle)
     // loadPlatforms(movies.imdbID)
     setDisplay(!display)
-  ***REMOVED***;
+  };
 
   const handleKeypress = e => {
     console.log(e.keyCode)
     if (e.keyCode === 13) {
       handleSubmit(e);
-    ***REMOVED***
-  ***REMOVED***;
+    }
+  };
 
   console.log("platform", platforms)
   console.log("movies", movies)
@@ -67,16 +67,16 @@ const Main = () => {
           type="text"
           id="movie-input"
           placeholder="Find a movie"
-          onChange={(event) => setSearchTitle(event.target.value)***REMOVED***
-          onKeyDown={handleKeypress***REMOVED***
-          value={searchTitle***REMOVED*** />
+          onChange={(event) => setSearchTitle(event.target.value)}
+          onKeyDown={handleKeypress}
+          value={searchTitle} />
         <div className="wrapper">
           <Button className="btn"
             id="search-button"
             variant="light"
             type="submit"
-            // onKeyDown={(e) => handleKeypress(e) ***REMOVED***
-            onClick={handleSubmit***REMOVED***
+            // onKeyDown={(e) => handleKeypress(e) }
+            onClick={handleSubmit}
           >Search
             </Button>
         </div>
@@ -88,54 +88,54 @@ const Main = () => {
 
       {/* {Object.keys(movies).map(key => {
           if (!Array.isArray(movies[key])) {
-            return <li>{key***REMOVED***: {movies[key]***REMOVED***</li>;
-***REMOVED***
-  ***REMOVED***)***REMOVED***
-      </li> */***REMOVED***
+            return <li>{key}: {movies[key]}</li>;
+          }
+        })}
+      </li> */}
 
 
       <Container>
         <Row>
           <Col>
-            <Card style={{ width: '18rem', border: "none" ***REMOVED******REMOVED*** className="card1">
-              <img className={display ? "display" : null***REMOVED*** id="image" src={movies.Poster***REMOVED*** alt="poster" />
+            <Card style={{ width: '18rem', border: "none" }} className="card1">
+              <img className={display ? "display" : null} id="image" src={movies.Poster} alt="poster" />
             </Card>
           </Col>
           <Col>
-            <Card style={{ width: '18rem', border: "none" ***REMOVED******REMOVED*** className="card">
+            <Card style={{ width: '18rem', border: "none" }} className="card">
               <Card.Body>
                 <br></br>
-                <Card.Title className="title">{movies.Title***REMOVED***</Card.Title>
+                <Card.Title className="title">{movies.Title}</Card.Title>
                 <Card.Text className="list">
-                  <li className={display ? "display" : null***REMOVED***>
-                    {movies.Plot***REMOVED***
+                  <li className={display ? "display" : null}>
+                    {movies.Plot}
                     <br></br>
                     <br></br>
-            Directed by {movies.Director***REMOVED***
+            Directed by {movies.Director}
                     <br></br>
-            Released in {movies.Year***REMOVED***
+            Released in {movies.Year}
                     <br></br>
-                    {movies.Genre***REMOVED***
+                    {movies.Genre}
                     <br></br>
-            Rated {movies.Rated***REMOVED***
+            Rated {movies.Rated}
                     <br></br>
-            IMDb: {movies.imdbRating***REMOVED***
+            IMDb: {movies.imdbRating}
                     <br></br>
                     <br></br>
-                    Watch: {platforms.collection?.id***REMOVED***
-                    {/* {platforms.collection ? platforms.collection.locations : ""***REMOVED*** */***REMOVED***
+                    Watch: {platforms.collection?.id}
+                    {/* {platforms.collection ? platforms.collection.locations : ""} */}
                     {/* {Object.keys(platforms.collection.locations).map(key => {
           if (!Array.isArray(platforms[key])) {
-            return <li>{key***REMOVED***: {platforms[key]***REMOVED***</li>;
-***REMOVED***
-  ***REMOVED***)***REMOVED*** */***REMOVED***
+            return <li>{key}: {platforms[key]}</li>;
+          }
+        })} */}
                   </li>
 
                   <ul>
-                    {/* {platforms.collection.locations***REMOVED*** */***REMOVED***
+                    {/* {platforms.collection.locations} */}
                     {/* {platforms.collection.locations.map(stream => {
-                      return <li>{stream.display_name***REMOVED***</li>
-          ***REMOVED***)***REMOVED*** */***REMOVED***
+                      return <li>{stream.display_name}</li>
+                    })} */}
                   </ul>
                   <br></br>
                 </Card.Text>
@@ -147,6 +147,6 @@ const Main = () => {
 
     </div >
   )
-***REMOVED***
+}
 
 export default Main;
