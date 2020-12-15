@@ -5,6 +5,6 @@ function App() {
   return (
     <Main />
   )
-***REMOVED***
+}
 
 export default App;
