@@ -21,6 +21,14 @@ body {
   background-color: black !important;
 }
 
+#main-card-info {
+  display: none;
+}
+
+#main-card-info.display {
+  display: block;
+}
+
 .main-card {
   margin-top: -40px;
 }

@@ -74,8 +74,8 @@ const Main = () => {
         })}
       </li> */}
 
-
-      <Container>
+    
+      <Container id="main-card-info" className={display ? "display" : null}>
         <Row>
           <Col>
             <Card style={{ width: '18rem', border: "none" }} className="card1">
