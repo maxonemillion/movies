@@ -1,8 +1,7 @@
 # movies
 
 ### PURPOSE:
-Where can I watch this movie? Click [here](https://dashboard.heroku.com/apps/moviestreamers) to find out!
-
+Where can I watch this movie? Click [here](http://moviestreamers.herokuapp.com/) to find out!
 
 ### TECHNOLOGIES:
 Express, React, Node
