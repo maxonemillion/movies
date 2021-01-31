@@ -31,7 +31,7 @@ const Main = () => {
     e.preventDefault();
     loadTitles(searchTitle)
     // loadPlatforms(movies.imdbID)
-    setDisplay(!display)
+    setDisplay(true)
   };
 
   const handleKeypress = e => {
